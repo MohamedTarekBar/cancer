@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="style/form.css">
+   </head>
+   <body>
+      <div class="success">
+         <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_4p5C1p.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+      </div>
+      <div class="container">
+         <header> Cancer Fighters Registration</header>
+         <form class="firstForm" action="">
+            <div class="details personal">
+               <span class="title">Personal Details</span>
+               <div class="fields">
+                  <div class="input-field">
+                     <label>Full Name</label>
+                     <input type="text" id= "FullName" name="fullname" placeholder="Enter your name" required>
+                  </div>
+                  <div class="input-field">
+                     <label>Date of Birth</label>
+                     <input type="date" id= "DateOfBirth" name="date"  placeholder="Enter birth date" required>
+                  </div>
+                  <div class="input-field">
+                     <label>Email</label>
+                     <input type="text"id="Email" name="email" placeholder="Enter your email" required>
+                  </div>
+                  <div class="input-field">
+                     <label>Mobile Number</label>
+                     <input type="number" id= "MobileNum" name="mobile"  placeholder="Enter mobile number" required>
+                  </div>
+                  <div class="input-field">
+                     <label>Gender</label>
+                     <select id="Gender" name="gender" required>
+                        <option disabled selected value="">Select gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                     </select>
+                  </div>
+                  <div class="input-field">
+                     <label>University</label>
+                     <input type="text" id= "University" name="university" placeholder="Enter your University" required>
+                  </div>
+                  <div class="input-field">
+                     <label>Faculty</label>
+                     <input type="text" id= "Faculty" name="faculty" placeholder="Enter your Faculty" required>
+                  </div>
+                  <div class="input-field">
+                     <label>Department</label>
+                     <input type="text" id= "Department" name="department"  placeholder="Enter your Department" required>
+                  </div>
+                  <div class="input-field">
+                     <label>Committee (you need to join)</label>
+                     <select  id= "Committee" name="committee" required>
+                        <option disabled selected value="">Select Committee</option>
+                        <option>PR</option>
+                        <option>HR</option>
+                        <option>SCIENTIFIC</option>
+                        <option>MEDIA</option>
+                        <option>CAMPINS</option>
+                        <option>Organization committee (OC)</option>
+                     </select>
+                  </div>
+               </div>
+            </div>
+            <div class="details ID">
+               <span class="title">Identity Details</span>
+               <div class="fields">
+                  <div class="input-field">
+                     <label>Governorate</label>
+                     <input type="text" id= "Governorate" name="governorate" placeholder="Enter YOUR Governorate" required>
+                  </div>
+                  <div class="input-field">
+                     <label>Town</label>
+                     <input type="text" id= "Town" name="town"  placeholder="Enter YOUR Town" required>
+                  </div>
+                  <div class="input-field">
+                     <label>Address</label>
+                     <input type="text" id= "Address" name="address" placeholder="Enter YOUR Address by details" required>
+                  </div>
+               </div>
+               <button class="nextBtn">
+               <span class="btnText">Next</span>
+               <i class="uil uil-navigator"></i>
+               </button>
+            </div>
+         </form>
+         <form class="secondForm" action="">
+         <div class="details address">
+            <span class="title">Genral Questions</span>
+            <div class="fields">
+               <div class="input-field">
+                  <label>What do you know about the Cancer?</label>
+                  <input type="text" id= "aboutCancer" name="aboutCancer"  placeholder="insert here" required>
+               </div>
+               <div class="input-field">
+                  <label>why would you like to join Cancer Fighter?</label>
+                  <input type="text" id="joinWhy" name="joinWhy"  placeholder="insert here" required>
+               </div>
+               <div class="input-field">
+                  <label>Where did you hear about us?</label>
+                  <input type="text" id="hearAboutUs" name="hearAboutUs" placeholder="insert here" required>
+               </div>
+               <div class="input-field">
+                  <label>Do you have PC ?</label>
+                  <select id = "selectDevice" name="selectDevice" required>
+                     <option disabled selected value="">Select one</option>
+                     <option>pc</option>
+                     <option>laptop</option>
+                     <option>neither</option>
+                  </select>
+               </div>
+            </div>
+         </div>
+         <div class="buttons">
+            <div class="backBtn">
+               <i class="uil uil-navigator"></i>
+               <span class="backBtn">Back</span>
+            </div>
+            <button class="sumbitBtn">
+            <span class="btnText">Submit</span>
+            <i class="uil uil-navigator"></i>
+            </button>
+         </div>
+         </form>
+      </div>
+      <script src="scripts/form.js" type="module"></script>
+   </body>
+</html>
