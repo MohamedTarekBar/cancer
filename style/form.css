@@ -2,7 +2,7 @@
 /* ===== Google Font Import - Poppins ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 @import url('https://unicons.iconscout.com/release/v4.0.0/css/line.css');
-
+@import url(./bootstrap.min.css);
 *{
     margin: 0;
     padding: 0;
@@ -338,4 +338,34 @@ form .buttons button , .backBtn{
     form .fields .input-field{
         width: 100%;
     }
+}
+
+.done {
+    inset: 0;
+    background-color: #f4b840;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.typed {
+    font-size: 2rem;
+}
+
+.backBtnEnd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    padding: 0 3rem;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    margin: 25px 0;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    background-color: #f58e8f; 
 }

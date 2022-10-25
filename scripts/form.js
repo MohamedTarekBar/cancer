@@ -5,8 +5,8 @@ import "https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.j
 
 let firstForm = document.querySelector(".firstForm");
 let secondForm = document.querySelector(".secondForm");
-let firstFormElements = Array.from(firstForm.elements);
-let secondFormElements = Array.from(secondForm.elements);
+let done = $('.done')
+
 let firstFormValues;
 let secondFormValues;
 
@@ -14,10 +14,12 @@ const buttons = {
   next: $(".nextBtn"),
   submit: $(".sumbitBtn"),
   back: $(".backBtn"),
+  backBtnEnd: $('.backBtnEnd')
 };
 
 (() => {
   $(secondForm).hide();
+  done.hide();
   $(firstForm).on("submit", (e) => {
     e.preventDefault();
   });
@@ -35,7 +37,21 @@ const buttons = {
   buttons.submit.on("click", (e) => {
     validateSecondForm();
   });
+  buttons.backBtnEnd.on('click',(e)=>{
+    backBtnEndTapped()
+  })
+  typeConfig()
 })();
+
+function typeConfig() {
+    var typed = new Typed('#typed', {
+        strings: ['We are', 'We are: <strong>Cancer Fighters</strong>'],
+        typeSpeed: 100,
+        backSpeed: 0,
+        smartBackspace: true, // this is a default
+        loop: true
+    });
+};
 
 function validateFirstForm() {
   if (firstForm.checkValidity()) {
@@ -58,33 +74,34 @@ function validateFirstForm() {
       town: firstForm.town.value,
       address: firstForm.address.value,
     };
-    console.log(firstFormValues);
-  }
-}
+  };
+};
 
 function validateSecondForm() {
   if (secondForm.checkValidity()) {
-    //submit
     secondFormValues = {
       aboutCancer: secondForm.aboutCancer.value,
       joinWhy: secondForm.joinWhy.value,
       hearAboutUs: secondForm.hearAboutUs.value,
       selectDevice: secondForm.selectDevice.value,
     };
-    console.log(secondFormValues);
     submitToGoogleForm();
   }
-}
+};
 
 function backtapped() {
   $(secondForm).hide();
   $(firstForm).show();
+};
+
+function backBtnEndTapped() {
+    location.reload()
 }
 
 function getDMY(date) {
   let d = new Date(date);
   return [d.getDate(), d.getMonth() + 1, d.getFullYear()];
-}
+};
 
 async function submitToGoogleForm() {
   let url = `https://docs.google.com/forms/u/0/d/e/1FAIpQLSeWfWfy4UaqdW-nWoc9EIntZTBndlxLJeODTE08YEf5RfQiFQ/formResponse?entry.127491737=${firstFormValues.mobile}&entry.638586207=${firstFormValues.email}&entry.1117808068=${firstFormValues.gender}&entry.1418669495=${firstFormValues.fullname}&entry.1571889210_year=${firstFormValues.year}&entry.1571889210_month=${firstFormValues.month}&entry.1571889210_day=${firstFormValues.day}&entry.1506369443=${firstFormValues.university}&entry.1347247189=${firstFormValues.faculty}&entry.3367459=${firstFormValues.department}&entry.646673259=${firstFormValues.governorate}&entry.1550317493=${firstFormValues.town}&entry.1643528773=${firstFormValues.address}&entry.1370290528=${secondFormValues.aboutCancer}&entry.1475714249=${secondFormValues.joinWhy}&entry.1062972090=${secondFormValues.hearAboutUs}&entry.864345454=${firstFormValues.committee}&entry.792561070=${secondFormValues.selectDevice}`;
@@ -94,11 +111,9 @@ async function submitToGoogleForm() {
   })
     .then((res) => {
       console.log(res, "--response--");
-    })
-    .then((value) => {
-      console.log(value, "--value--");
+      done.show()
     })
     .catch((err) => {
       console.log(err, "--error--");
     });
-}
+};
