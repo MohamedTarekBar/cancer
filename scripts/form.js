@@ -112,6 +112,8 @@ async function submitToGoogleForm() {
     .then((res) => {
       console.log(res, "--response--");
       done.show()
+      $(secondForm).hide();
+      $(firstForm).hide();
     })
     .catch((err) => {
       console.log(err, "--error--");
