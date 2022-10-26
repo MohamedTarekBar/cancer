@@ -369,3 +369,7 @@ form .buttons button , .backBtn{
     cursor: pointer;
     background-color: #f58e8f; 
 }
+
+.no-items {
+    margin:0
+}
